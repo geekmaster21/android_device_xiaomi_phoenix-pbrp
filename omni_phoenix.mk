@@ -16,6 +16,7 @@
 
 # Release name
 PRODUCT_RELEASE_NAME := phoenix
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 DEVICE_PATH := device/xiaomi/phoenix
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
