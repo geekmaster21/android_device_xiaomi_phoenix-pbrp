@@ -30,7 +30,7 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/roo
 PRODUCT_DEVICE := phoenix
 PRODUCT_NAME := omni_phoenix
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Poco X2
+PRODUCT_MODEL := Redmi K30
 PRODUCT_MANUFACTURER := Xiaomi
 
 # HACK: Set vendor patch level
