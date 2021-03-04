@@ -19,7 +19,7 @@ env:
   GitHubName: ${{ secrets.GitHubName }}
   SFPassword: ${{ secrets.SFPassword }}
   SFUserName: ${{ secrets.SFUserName }}
-  CIRCLE_SHA1: "667b4f63dcc249384127f04ebadb398afc176083"
+  CIRCLE_SHA1: $GITHUB_SHA
 
 jobs:
   build:
