@@ -4,14 +4,14 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: "https://github.com/PitchBlackRecoveryProject/manifest_pb -b android-10.0"
-  DT_LINK: "https://github.com/PitchBlackRecoveryProject/android_device_xiaomi_phoenix-pbrp -b test-a10"
   VENDOR: "xiaomi"
   CODENAME: "phoenix"
+  BUILD_RELEASE_TYPE: "TEST"
   TARGET: "recoveryimage"
   FLAVOR: "eng"
+  MANIFEST: "https://github.com/PitchBlackRecoveryProject/manifest_pb -b ${GITHUB_REF##*/}"
+  DT_LINK: "${GITHUB_REPOSITORY##*/} -b ${GITHUB_REF##*/}"
   TZ: "Asia/Kolkata"
-  BUILD_RELEASE_TYPE: "TEST"
   BOT_API: ${{ secrets.BOT_API }}
   GCF_AUTH_KEY: ${{ secrets.GCF_AUTH_KEY }}
   GH_BOT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -27,6 +27,8 @@ jobs:
     steps:
       - name: Mock Build
         run: |
+          # Test
+          echo $DT_LINK;
           # Mock Official Build
           mkdir -p work/out/target/product/phoenix
           cd work/out/target/product/phoenix
